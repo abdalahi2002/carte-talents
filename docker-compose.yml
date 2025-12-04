@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  carte-talents:
+    container_name: carte-talents
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL_AB}
+        - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY_AB}
+    image: carte-talents
+    restart: always
+    ports:
+      - '20379:3000'
+
+
