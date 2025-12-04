@@ -61,7 +61,7 @@ Plateforme web permettant aux étudiants de décrire leurs compétences, talents
 
 1. **Cloner le projet**
 ```bash
-git clone <repository-url>
+git clone https://github.com/abdalahi2002/carte-talents
 cd carte-talents
 ```
 
