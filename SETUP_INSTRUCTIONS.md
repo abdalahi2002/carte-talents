@@ -16,8 +16,8 @@ Cela signifie que vous devez configurer vos variables d'environnement Supabase.
 À la racine du projet, créez un fichier nommé `.env.local` avec le contenu suivant :
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=votre_url_supabase
-NEXT_PUBLIC_SUPABASE_ANON_KEY=votre_clé_anon
+NEXT_PUBLIC_SUPABASE_URL_AB=votre_url_supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY_AB=votre_clé_anon
 ```
 
 ### 2. Obtenir vos clés Supabase
@@ -51,8 +51,8 @@ npm run dev
 ## Exemple de fichier `.env.local`
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=https://abcdefghijklmnop.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFiY2RlZmdoaWprbG1ub3AiLCJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNjIzOTAyMiwiZXhwIjoxOTMxODE1MDIyfQ.exemple
+NEXT_PUBLIC_SUPABASE_URL_AB=https://abcdefghijklmnop.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY_AB=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFiY2RlZmdoaWprbG1ub3AiLCJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNjIzOTAyMiwiZXhwIjoxOTMxODE1MDIyfQ.exemple
 ```
 
 ⚠️ **Important** : Ne partagez jamais votre fichier `.env.local` publiquement. Il est déjà dans `.gitignore`.

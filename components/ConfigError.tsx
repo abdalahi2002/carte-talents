@@ -27,8 +27,8 @@ export default function ConfigError() {
               <li>Créez un fichier <code className="bg-yellow-100 dark:bg-yellow-900 px-1 rounded">.env.local</code> à la racine du projet</li>
               <li>Ajoutez vos clés Supabase :
                 <pre className="mt-2 bg-gray-900 text-green-400 p-3 rounded text-xs overflow-x-auto">
-{`NEXT_PUBLIC_SUPABASE_URL=votre_url_supabase
-NEXT_PUBLIC_SUPABASE_ANON_KEY=votre_clé_anon`}
+{`NEXT_PUBLIC_SUPABASE_URL_AB=votre_url_supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY_AB=votre_clé_anon`}
                 </pre>
               </li>
               <li>Obtenez vos clés sur <a href="https://supabase.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">supabase.com</a> dans Settings → API</li>

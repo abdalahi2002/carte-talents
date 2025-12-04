@@ -76,8 +76,8 @@ npm install
    
    b. Créer un fichier `.env.local` à la racine du projet :
    ```env
-   NEXT_PUBLIC_SUPABASE_URL=votre_url_supabase
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=votre_clé_anon_supabase
+   NEXT_PUBLIC_SUPABASE_URL_AB=votre_url_supabase
+   NEXT_PUBLIC_SUPABASE_ANON_KEY_AB=votre_clé_anon_supabase
    ```
 
    c. Exécuter la migration SQL dans l'éditeur SQL de Supabase :

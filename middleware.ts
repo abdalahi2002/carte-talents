@@ -9,15 +9,15 @@ export async function middleware(request: NextRequest) {
   })
 
   // Vérifier que les variables d'environnement sont définies
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL_AB
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY_AB
 
   if (!supabaseUrl || !supabaseAnonKey) {
     // Si les variables ne sont pas définies, retourner une réponse d'erreur pour les routes API
     // mais permettre la navigation pour afficher un message d'erreur
     if (request.nextUrl.pathname.startsWith('/api')) {
       return NextResponse.json(
-        { error: 'Variables d\'environnement Supabase non configurées. Veuillez créer un fichier .env.local avec NEXT_PUBLIC_SUPABASE_URL et NEXT_PUBLIC_SUPABASE_ANON_KEY' },
+        { error: 'Variables d\'environnement Supabase non configurées. Veuillez créer un fichier .env.local avec NEXT_PUBLIC_SUPABASE_URL_AB et NEXT_PUBLIC_SUPABASE_ANON_KEY_AB' },
         { status: 500 }
       )
     }

@@ -17,8 +17,8 @@ Ce guide vous explique comment configurer Supabase pour le projet "Carte des Tal
 
 1. Dans votre projet Supabase, allez dans **Settings** > **API**
 2. Copiez les valeurs suivantes :
-   - **Project URL** → `NEXT_PUBLIC_SUPABASE_URL`
-   - **anon public** key → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - **Project URL** → `NEXT_PUBLIC_SUPABASE_URL_AB`
+   - **anon public** key → `NEXT_PUBLIC_SUPABASE_ANON_KEY_AB`
 
 ## Étape 3 : Configurer les variables d'environnement
 
@@ -26,8 +26,8 @@ Ce guide vous explique comment configurer Supabase pour le projet "Carte des Tal
 2. Ajoutez les variables suivantes :
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=https://votre-projet.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=votre_clé_anon
+NEXT_PUBLIC_SUPABASE_URL_AB=https://votre-projet.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY_AB=votre_clé_anon
 ```
 
 ## Étape 4 : Exécuter la migration SQL
