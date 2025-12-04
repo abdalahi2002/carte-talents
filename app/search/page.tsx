@@ -88,21 +88,21 @@ export default function SearchPage() {
       let filtered = data
       if (filters.skills && filters.skills.length > 0) {
         filtered = filtered.filter(profile => 
-          profile.skills.some(skill => filters.skills!.includes(skill.name))
+          profile.skills.some((skill: Skill) => filters.skills!.includes(skill.name))
         )
       }
 
       // Filter by languages
       if (filters.languages && filters.languages.length > 0) {
         filtered = filtered.filter(profile => 
-          profile.languages.some(lang => filters.languages!.includes(lang.name))
+          profile.languages.some((lang: Language) => filters.languages!.includes(lang.name))
         )
       }
 
       // Filter by categories
       if (filters.categories && filters.categories.length > 0) {
         filtered = filtered.filter(profile => 
-          profile.skills.some(skill => filters.categories!.includes(skill.category))
+          profile.skills.some((skill: Skill) => filters.categories!.includes(skill.category))
         )
       }
 
