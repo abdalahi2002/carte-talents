@@ -2,7 +2,7 @@
 
 Plateforme web permettant aux étudiants de décrire leurs compétences, talents, langues, projets personnels, etc., et de générer une carte interactive des talents.
 
-## 🚀 Technologies
+##  Technologies
 
 - **Next.js 16** - Framework React avec App Router
 - **TypeScript** - Typage statique
@@ -12,9 +12,9 @@ Plateforme web permettant aux étudiants de décrire leurs compétences, talents
 - **Recharts** - Visualisations de données
 - **Lucide React** - Icônes
 
-## 📋 Fonctionnalités
+##  Fonctionnalités
 
-### ✅ Implémentées
+###  Implémentées
 
 1. **Profil Utilisateur**
    - Création et édition de profil
@@ -50,7 +50,7 @@ Plateforme web permettant aux étudiants de décrire leurs compétences, talents
    - Gestion de session avec Supabase Auth
    - Protection des routes
 
-## 🛠️ Installation
+##  Installation
 
 ### Prérequis
 
@@ -94,7 +94,7 @@ npm run dev
 http://localhost:3000
 ```
 
-## 📁 Structure du Projet
+##  Structure du Projet
 
 ```
 carte-talents/
@@ -114,7 +114,7 @@ carte-talents/
 └── public/               # Assets statiques
 ```
 
-## 🗄️ Schéma de Base de Données
+##  Schéma de Base de Données
 
 - **profiles** - Profils utilisateurs
 - **skills** - Compétences
@@ -122,26 +122,26 @@ carte-talents/
 - **projects** - Projets personnels
 - **collaboration_requests** - Demandes de collaboration
 
-## 🔐 Sécurité
+##  Sécurité
 
 - Row Level Security (RLS) activé sur toutes les tables
 - Politiques de sécurité configurées
 - Authentification via Supabase Auth
 - Protection des routes sensibles
 
-## 🎨 Personnalisation
+##  Personnalisation
 
 Les styles peuvent être modifiés dans :
 - `app/globals.css` - Styles globaux
 - Classes Tailwind dans les composants
 
-## 📝 Notes
+##  Notes
 
 - Le système de vérification "Talent Verified" nécessite des droits administrateur
 - La page `/admin` est accessible à tous les utilisateurs connectés (à restreindre selon vos besoins)
 - Les migrations SQL doivent être exécutées dans l'ordre
 
-## 🚀 Déploiement
+##  Déploiement
 
 ### Vercel (Recommandé)
 
@@ -158,10 +158,10 @@ Le projet peut être déployé sur toute plateforme supportant Next.js :
 - AWS Amplify
 - etc.
 
-## 📧 Contact
+##  Contact
 
 Pour toute question ou problème, contactez : jgallet@cesi.fr
 
-## 📄 Licence
+##  Licence
 
 Ce projet a été créé pour le défi "Nuit de l'Info" - CESI Saint-Nazaire

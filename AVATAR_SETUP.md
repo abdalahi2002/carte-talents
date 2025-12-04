@@ -20,10 +20,10 @@ Pour activer l'upload d'avatars, vous devez configurer Supabase Storage :
 2. Ou exécutez la migration SQL `supabase/migrations/003_storage_setup.sql` dans l'éditeur SQL
 
 Les politiques créées permettent :
-- ✅ Les utilisateurs authentifiés peuvent uploader leur propre avatar
-- ✅ Les utilisateurs authentifiés peuvent modifier leur propre avatar
-- ✅ Les utilisateurs authentifiés peuvent supprimer leur propre avatar
-- ✅ Tout le monde peut voir les avatars (lecture publique)
+-  Les utilisateurs authentifiés peuvent uploader leur propre avatar
+-  Les utilisateurs authentifiés peuvent modifier leur propre avatar
+-  Les utilisateurs authentifiés peuvent supprimer leur propre avatar
+-  Tout le monde peut voir les avatars (lecture publique)
 
 ### 3. Structure des fichiers
 
@@ -46,16 +46,16 @@ avatars/
 ### Pour les développeurs
 
 Le composant `AvatarUpload` gère automatiquement :
-- ✅ Validation du type de fichier (images uniquement)
-- ✅ Validation de la taille (max 5 Mo)
-- ✅ Preview de l'image avant upload
-- ✅ Suppression de l'ancien avatar lors du remplacement
-- ✅ Mise à jour automatique du profil
+-  Validation du type de fichier (images uniquement)
+-  Validation de la taille (max 5 Mo)
+-  Preview de l'image avant upload
+-  Suppression de l'ancien avatar lors du remplacement
+-  Mise à jour automatique du profil
 
 Le composant `Avatar` affiche :
-- ✅ L'image si un avatar existe
-- ✅ Les initiales si pas d'avatar
-- ✅ Différentes tailles (sm, md, lg, xl)
+-  L'image si un avatar existe
+-  Les initiales si pas d'avatar
+-  Différentes tailles (sm, md, lg, xl)
 
 ## Exemple d'utilisation
 

@@ -55,7 +55,7 @@ Cette migration va créer :
      - `http://localhost:3000/**` (pour toutes les redirections en développement)
      - Votre URL de production + `/auth/reset-password` (pour la production)
 
-   ⚠️ **Important** : Pour la réinitialisation de mot de passe, vous devez ajouter l'URL de redirection dans la liste des URLs autorisées.
+    **Important** : Pour la réinitialisation de mot de passe, vous devez ajouter l'URL de redirection dans la liste des URLs autorisées.
 
 ## Étape 6 : Tester la configuration
 
@@ -95,7 +95,7 @@ Pour vérifier que tout fonctionne :
 
 ## Notes importantes
 
-- ⚠️ Ne partagez jamais votre clé `service_role` publiquement
-- ⚠️ La clé `anon` est publique mais sécurisée par les politiques RLS
-- ⚠️ Pour la production, mettez à jour les URLs de redirection dans Supabase
+-  Ne partagez jamais votre clé `service_role` publiquement
+-  La clé `anon` est publique mais sécurisée par les politiques RLS
+-  Pour la production, mettez à jour les URLs de redirection dans Supabase
 

@@ -61,15 +61,7 @@ export default function Navbar() {
                     <span className="hidden sm:inline">Admin</span>
                   </Link>
                 )}
-                {profile?.role === 'admin' && (
-                  <Link
-                    href="/admin/roles"
-                    className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    <Shield className="h-4 w-4" />
-                    <span className="hidden sm:inline">Rôles</span>
-                  </Link>
-                )}
+                
                 <Link
                   href="/profile"
                   className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium"

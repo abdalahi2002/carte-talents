@@ -5,7 +5,7 @@ const path = require('path')
 
 const envPath = path.join(process.cwd(), '.env.local')
 
-console.log('🔍 Vérification de la configuration...\n')
+console.log(' Vérification de la configuration...\n')
 
 if (!fs.existsSync(envPath)) {
   console.log('Le fichier .env.local n\'existe pas.\n')
