@@ -46,7 +46,25 @@ export async function middleware(request: NextRequest) {
     }
   )
 
-  await supabase.auth.getUser()
+  const { data: { user } } = await supabase.auth.getUser()
+
+  // Routes d'authentification que les utilisateurs connectés ne peuvent pas accéder
+  const authRoutes = ['/auth/login', '/auth/register', '/auth/reset-password', '/auth/forgot-password']
+  const isAuthRoute = authRoutes.some(route => request.nextUrl.pathname.startsWith(route))
+
+  // Si l'utilisateur est connecté et essaie d'accéder à une page d'authentification
+  if (user && isAuthRoute) {
+    return NextResponse.redirect(new URL('/', request.url))
+  }
+
+  // Routes protégées qui nécessitent une authentification
+  const protectedRoutes = ['/profile', '/admin', '/collaborate']
+  const isProtectedRoute = protectedRoutes.some(route => request.nextUrl.pathname.startsWith(route))
+
+  // Si l'utilisateur n'est pas connecté et essaie d'accéder à une route protégée
+  if (!user && isProtectedRoute) {
+    return NextResponse.redirect(new URL('/auth/login', request.url))
+  }
 
   return response
 }
@@ -63,4 +81,3 @@ export const config = {
     '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],
 }
-

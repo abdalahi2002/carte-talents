@@ -1,7 +1,12 @@
+'use client'
+
 import Link from 'next/link'
 import { Search, Map, Users, Award, ArrowRight } from 'lucide-react'
+import { useAuthStore } from '@/store/authStore'
 
 export default function Home() {
+  const { user } = useAuthStore()
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -15,20 +20,41 @@ export default function Home() {
               Découvrez et connectez-vous avec les talents étudiants du CESI Saint-Nazaire
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/auth/signup"
-                className="inline-flex items-center px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-              >
-                Créer mon profil
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <Link
-                href="/search"
-                className="inline-flex items-center px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-400 transition-colors"
-              >
-                Explorer les talents
-                <Search className="ml-2 h-5 w-5" />
-              </Link>
+              {user ? (
+                <>
+                  <Link
+                    href="/profile"
+                    className="inline-flex items-center px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+                  >
+                    Mon profil
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                  <Link
+                    href="/search"
+                    className="inline-flex items-center px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-400 transition-colors"
+                  >
+                    Explorer les talents
+                    <Search className="ml-2 h-5 w-5" />
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/auth/signup"
+                    className="inline-flex items-center px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+                  >
+                    Créer mon profil
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                  <Link
+                    href="/search"
+                    className="inline-flex items-center px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-400 transition-colors"
+                  >
+                    Explorer les talents
+                    <Search className="ml-2 h-5 w-5" />
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -93,23 +119,25 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-            Prêt à partager vos talents ?
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-            Rejoignez la communauté et faites partie de la carte des talents
-          </p>
-          <Link
-            href="/auth/signup"
-            className="inline-flex items-center px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-          >
-            Commencer maintenant
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
-        </div>
-      </section>
+      {!user && (
+        <section className="py-20 bg-gray-50 dark:bg-gray-800">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+              Prêt à partager vos talents ?
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
+              Rejoignez la communauté et faites partie de la carte des talents
+            </p>
+            <Link
+              href="/auth/signup"
+              className="inline-flex items-center px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            >
+              Commencer maintenant
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </div>
+        </section>
+      )}
     </div>
   )
 }
