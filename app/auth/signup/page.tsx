@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import Link from 'next/link'
-import { Mail, Lock, User, UserPlus, AlertCircle, CheckCircle } from 'lucide-react'
+import { Mail, Lock, User, UserPlus, AlertCircle, CheckCircle, Eye, EyeOff } from 'lucide-react'
 import { validateEmail, validatePassword, validateName } from '@/lib/validation'
 
 export default function SignupPage() {
@@ -12,6 +12,7 @@ export default function SignupPage() {
   const [password, setPassword] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [passwordErrors, setPasswordErrors] = useState<string[]>([])
@@ -181,13 +182,13 @@ export default function SignupPage() {
                 <input
                   id="password"
                   name="password"
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   autoComplete="new-password"
                   required
                   value={password}
                   onChange={(e) => handlePasswordChange(e.target.value)}
                   onFocus={() => setShowPasswordRequirements(true)}
-                  className={`appearance-none block w-full pl-10 pr-3 py-2 border rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 ${
+                  className={`appearance-none block w-full pl-10 pr-10 py-2 border rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 ${
                     passwordErrors.length > 0 && password.length > 0
                       ? 'border-red-300 dark:border-red-700 focus:ring-red-500 focus:border-red-500'
                       : password.length > 0 && passwordErrors.length === 0
@@ -196,6 +197,17 @@ export default function SignupPage() {
                   }`}
                   placeholder="••••••••"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                >
+                  {showPassword ? (
+                    <EyeOff className="h-5 w-5" />
+                  ) : (
+                    <Eye className="h-5 w-5" />
+                  )}
+                </button>
               </div>
               {showPasswordRequirements && (
                 <div className="mt-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-md">
@@ -244,4 +256,3 @@ export default function SignupPage() {
     </div>
   )
 }
-
